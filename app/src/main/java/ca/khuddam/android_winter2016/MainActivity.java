@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -40,23 +40,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void onSmallButtonClick(View view){
         //Change the background to the colour of the small jacket
-        LinearLayout LL;
-        LL = (LinearLayout) findViewById(R.id.Layout);
-        LL.setBackgroundColor( getColorValue(smallJacket.getColor()));
+        RelativeLayout RL;
+        RL = (RelativeLayout) findViewById(R.id.Layout);
+        RL.setBackgroundColor( getColorValue(smallJacket.getColor()));
     }
 
     public void onMediumButtonClick(View view){
         //Change the background to the colour of the medium jacket
-        LinearLayout LL;
-        LL = (LinearLayout) findViewById(R.id.Layout);
-        LL.setBackgroundColor( getColorValue(mediumJacket.getColor()));
+        RelativeLayout RL;
+        RL = (RelativeLayout) findViewById(R.id.Layout);
+        RL.setBackgroundColor( getColorValue(mediumJacket.getColor()));
     }
 
     public void onLargeButtonClick(View view){
         //Change the background to the colour of the medium jacket
-        LinearLayout LL;
-        LL = (LinearLayout) findViewById(R.id.Layout);
-        LL.setBackgroundColor( getColorValue(largeJacket.getColor()));
+        RelativeLayout RL;
+        RL = (RelativeLayout) findViewById(R.id.Layout);
+        RL.setBackgroundColor( getColorValue(largeJacket.getColor()));
     }
 
 

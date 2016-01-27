@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +9,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ca.khuddam.android_winter2016.MainActivity"
     android:orientation="vertical"
-    android:id="@+id/Layout">
+    android:id="@+id/Layout"
+    android:weightSum="1">
 
     <!-- TextView
         android:id="@+id/top_line"
@@ -23,9 +24,41 @@
         android:text="This should be great !" /-->
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Please select your jacket to see its color."/>
+        android:text="Please select your jacket to see its color."
+        android:autoText="false"
+        android:background="#ffffff"
+        android:elegantTextHeight="false"
+        android:singleLine="false"
+        android:textAlignment="center"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        />
+
+
+
+
+
+    <Button
+         android:id="@+id/btnMediumJacket"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/str_medium_jacket"
+         android:onClick="onMediumButtonClick"
+         android:textSize="16dp"
+         android:layout_alignParentBottom="true"/>
+
+    <Button
+        android:id="@+id/btnLargeJacket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_large_jacket"
+        android:onClick="onLargeButtonClick"
+        android:textSize="16dp"
+        android:layout_above="@id/btnMediumJacket" />
 
     <Button
         android:id="@+id/btnSmallJacket"
@@ -33,23 +66,68 @@
         android:layout_height="wrap_content"
         android:text="@string/str_small_jacket"
         android:onClick="onSmallButtonClick"
-        />
-
-    <Button
-        android:id="@+id/btnMediumJacket"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/str_medium_jacket"
-        android:onClick="onMediumButtonClick"
-        />
-
-    <Button
-        android:id="@+id/btnLargeJacket"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/str_large_jacket"
-        android:onClick="onLargeButtonClick"
-        />
+        android:textSize="16dp"
+        android:layout_alignRight="@id/btnLargeJacket"
+        android:layout_alignParentBottom="true"/>
 
 
-</LinearLayout>
+</RelativeLayout>
+
+<!-- LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:paddingLeft="@dimen/activity_horizontal_margin"
+android:paddingRight="@dimen/activity_horizontal_margin"
+android:paddingTop="@dimen/activity_vertical_margin"
+tools:context="ca.khuddam.android_winter2016.MainActivity"
+android:orientation="vertical"
+android:id="@+id/Layout"
+android:weightSum="1">
+
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Please select your jacket to see its color."
+    android:autoText="false"
+    android:background="#ffffff"
+    android:elegantTextHeight="false"
+    android:singleLine="false"
+    android:textAlignment="center"
+    android:textSize="32dp"
+    android:textStyle="bold"
+    android:typeface="sans" />
+
+<Space
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+<Button
+    android:id="@+id/btnLargeJacket"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/str_large_jacket"
+    android:onClick="onLargeButtonClick"
+    android:textSize="16dp" />
+
+<Button
+    android:id="@+id/btnSmallJacket"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/str_small_jacket"
+    android:onClick="onSmallButtonClick"
+    android:textSize="16dp" />
+
+
+
+<Button
+    android:id="@+id/btnMediumJacket"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/str_medium_jacket"
+    android:onClick="onMediumButtonClick"
+    android:textSize="16dp" />
+
+</LinearLayout -->
