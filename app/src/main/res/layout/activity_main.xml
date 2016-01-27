@@ -9,9 +9,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ca.khuddam.android_winter2016.MainActivity"
     android:orientation="vertical"
-    >
+    android:id="@+id/Layout">
 
-    <TextView
+    <!-- TextView
         android:id="@+id/top_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,7 +20,36 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This should be great !" />
+        android:text="This should be great !" /-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please select your jacket to see its color."/>
+
+    <Button
+        android:id="@+id/btnSmallJacket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_small_jacket"
+        android:onClick="onSmallButtonClick"
+        />
+
+    <Button
+        android:id="@+id/btnMediumJacket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_medium_jacket"
+        android:onClick="onMediumButtonClick"
+        />
+
+    <Button
+        android:id="@+id/btnLargeJacket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_large_jacket"
+        android:onClick="onLargeButtonClick"
+        />
 
 
 </LinearLayout>
