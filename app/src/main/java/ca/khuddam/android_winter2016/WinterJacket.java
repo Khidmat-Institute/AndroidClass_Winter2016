@@ -19,7 +19,8 @@ public class WinterJacket {
     public enum JacketColor {
         BLACK,
         BLUE,
-        RED
+        RED,
+
     }
 
     public void setColor(JacketColor theColor) {
@@ -29,5 +30,8 @@ public class WinterJacket {
     public JacketColor getColor() {
         return color;
     }
+
+
+
 
 }

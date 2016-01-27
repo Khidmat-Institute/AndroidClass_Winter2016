@@ -9,18 +9,62 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ca.khuddam.android_winter2016.MainActivity"
     android:orientation="vertical"
-    >
+    android:weightSum="1"
+    android:background="#696969">
+
 
     <TextView
         android:id="@+id/top_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Assalamoalaikum - Happy 50 years" />
-
+        android:text="Welcome to android App By Ghani Sohail"
+        android:textColor="#00BFFF"
+        android:textSize="20dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This should be great !" />
+        android:text="Canada Goose Large Winter Jacket"
+        android:textColor="#000000"/>
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="International Medium Winter Jacket"
+       android:textColor="#DC143C"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Leather Small Winter Jacket"
+        android:textColor="#FFA500"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"/>
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Black Winter Jacket"
+        android:layout_marginTop="260dp"
+        android:layout_weight="0.08"
+        android:onClick="btn1"/>
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:text="Blue Winter Jacket"
+        android:textColor="#00BFFF"/>
+    <Button
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:text="Red Winter Jacket"
+        android:id="@+id/button"
+        android:layout_marginTop="-55dp"
+        android:layout_gravity="right"
+        android:textColor="#FF0000"
+    />
 
 
 </LinearLayout>
