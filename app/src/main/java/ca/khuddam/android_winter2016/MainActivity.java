@@ -1,5 +1,6 @@
 package ca.khuddam.android_winter2016;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -60,8 +61,12 @@ public class MainActivity extends AppCompatActivity {
             case BLUE: topLine.setTextColor(Color.BLUE); break;
             case RED: topLine.setTextColor(Color.RED); break;
         }
+    }
 
-
+    // Method that opens the second Activity
+    public void openSecondActivity(View v){
+        Intent intentToOpenActivity = new Intent(this,SecondActivity.class);
+        startActivity(intentToOpenActivity);
     }
 
     public void buttonHandler(View clickedView) {
