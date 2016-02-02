@@ -1,8 +1,9 @@
 package ca.khuddam.android_winter2016;
 
+import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,13 +28,13 @@ public class MainActivity extends AppCompatActivity {
         root = findViewById(R.id.rootView);
 
         // Wire a connection to the top TextView
-        topLine = (TextView)findViewById(R.id.top_line);
+        topLine = (TextView) findViewById(R.id.top_line);
 
         topLine.setText(topLine.getText() + " - Some dynamic stuff I control");
 
-        buttonOne = (Button)findViewById(R.id.button1);
-        buttonTwo = (Button)findViewById(R.id.button2);
-        buttonThree = (Button)findViewById(R.id.button3);
+        buttonOne = (Button) findViewById(R.id.button1);
+        buttonTwo = (Button) findViewById(R.id.button2);
+        buttonThree = (Button) findViewById(R.id.button3);
 
         // Creating an actual instance of a Jacket from the blueprint
         // that we defined in WinterJacket.java
@@ -53,19 +54,50 @@ public class MainActivity extends AppCompatActivity {
         buttonTwo.setTag(jacketTwo);
         buttonThree.setTag(jacketThree);
 
-        switch(smallJacket.getColor()) {
+        // Intent for Second Activity
+        final Intent intent = new Intent(this, SecondActivity.class);
+
+
+        // Add click listeners for the three buttons separately.
+        // Implementing the ClickListener interface is also an option.
+        buttonOne.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View clickedView) {
+                startActivity(intent);
+            }
+        });
+
+        buttonTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View clickedView) {
+                WinterJacket jacket = (WinterJacket) clickedView.getTag();
+                root.setBackgroundColor(jacket.getAndroidColor());
+            }
+        });
+
+
+        buttonThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View clickedView) {
+                WinterJacket jacket = (WinterJacket) clickedView.getTag();
+                root.setBackgroundColor(jacket.getAndroidColor());
+            }
+        });
+
+        switch (smallJacket.getColor()) {
             // Set the topline text color based on jackcolor
             // using html type hex color values
-            case BLACK: topLine.setTextColor(Color.BLACK); break;
-            case BLUE: topLine.setTextColor(Color.BLUE); break;
-            case RED: topLine.setTextColor(Color.RED); break;
+            case BLACK:
+                topLine.setTextColor(Color.BLACK);
+                break;
+            case BLUE:
+                topLine.setTextColor(Color.BLUE);
+                break;
+            case RED:
+                topLine.setTextColor(Color.RED);
+                break;
         }
-
-
     }
 
-    public void buttonHandler(View clickedView) {
-        WinterJacket jacket = (WinterJacket)clickedView.getTag();
-        root.setBackgroundColor(jacket.getAndroidColor());
-    }
 }
