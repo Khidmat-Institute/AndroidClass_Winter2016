@@ -39,10 +39,9 @@
             android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Button 1"
+            android:text="Set BLUE + LongPress 2nd Activity"
             android:layout_margin="5dp"
             android:background="@drawable/btn_round_corner_gradient_bg"
-            android:onClick="openSecondActivity"
             />
 
         <LinearLayout
@@ -55,9 +54,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:text="Button 2"
+                android:text="Set GREEN"
                 android:background="@drawable/btn_bg_img"
-                android:onClick="buttonHandler"
                 />
             <Button
                 android:id="@+id/button3"
@@ -65,8 +63,7 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_bg"
-                android:text="Button 3"
-                android:onClick="buttonHandler"
+                android:text="Set RED"
                 />
         </LinearLayout>
     </LinearLayout>

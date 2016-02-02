@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-
     TextView topLine;
 
     Button buttonOne;
@@ -36,22 +35,23 @@ public class MainActivity extends AppCompatActivity {
         buttonTwo = (Button)findViewById(R.id.button2);
         buttonThree = (Button)findViewById(R.id.button3);
 
-        // Creating an actual instance of a Jacket from the blueprint
-        // that we defined in WinterJacket.java
+        // 1. Creating instances of Jacket from the blueprint defined in WinterJacket.java
+        // 2. Setting jacket colors
+        // 3. Assigning jacket's reference to buttons on activity
+
+        // First jacket
         WinterJacket smallJacket = new WinterJacket();
         smallJacket.setColor(WinterJacket.JacketColor.BLUE);
+        buttonOne.setTag(smallJacket);
 
-        // second jacket
+        // Second jacket
         WinterJacket jacketTwo = new WinterJacket();
         jacketTwo.setColor(WinterJacket.JacketColor.GREEN);
+        buttonTwo.setTag(jacketTwo);
 
-        // third jacket
+        // Third jacket
         WinterJacket jacketThree = new WinterJacket();
         jacketThree.setColor(WinterJacket.JacketColor.RED);
-
-        // associate jackets with the buttons
-        buttonOne.setTag(smallJacket);
-        buttonTwo.setTag(jacketTwo);
         buttonThree.setTag(jacketThree);
 
         switch(smallJacket.getColor()) {
@@ -61,16 +61,29 @@ public class MainActivity extends AppCompatActivity {
             case BLUE: topLine.setTextColor(Color.BLUE); break;
             case RED: topLine.setTextColor(Color.RED); break;
         }
+
+        // Assigning the onClickListener to each button
+        buttonOne.setOnClickListener(buttonListener);
+        buttonTwo.setOnClickListener(buttonListener);
+        buttonThree.setOnClickListener(buttonListener);
+
+        // Setting a OnLongClick Listener to open Second Activity on Long Press of first button
+        buttonOne.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent intentToOpenActivity = new Intent(getApplicationContext(), SecondActivity.class);
+                startActivity(intentToOpenActivity);
+                return false;
+            }
+        });
     }
 
-    // Method that opens the second Activity
-    public void openSecondActivity(View v){
-        Intent intentToOpenActivity = new Intent(this,SecondActivity.class);
-        startActivity(intentToOpenActivity);
-    }
-
-    public void buttonHandler(View clickedView) {
-        WinterJacket jacket = (WinterJacket)clickedView.getTag();
-        root.setBackgroundColor(jacket.getAndroidColor());
-    }
+    // A common OnClick Listener object that can be assigned to any Objects
+    View.OnClickListener buttonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            WinterJacket jacket = (WinterJacket)v.getTag();
+            root.setBackgroundColor(jacket.getAndroidColor());
+        }
+    };
 }
