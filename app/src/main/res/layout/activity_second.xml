@@ -8,6 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/activity_background"
+    android:id="@+id/second_activity_root"
     tools:context="ca.khuddam.android_winter2016.SecondActivity">
 
     <TextView
@@ -34,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Third line of text (Small)"
+        android:text="Third line of text (Small)\n\n Click somewhere on screen to show 'MainActivity'"
         android:id="@+id/textView3"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
