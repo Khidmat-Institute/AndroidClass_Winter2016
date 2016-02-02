@@ -28,7 +28,6 @@
             android:text="This should be great !" />
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,6 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Button 1"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_round_corner_gradient_bg"
             android:onClick="buttonHandler"
             />
 
@@ -55,6 +56,7 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Button 2"
+                android:background="@drawable/btn_bg_img"
                 android:onClick="buttonHandler"
                 />
             <Button
@@ -62,10 +64,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn_bg"
                 android:text="Button 3"
                 android:onClick="buttonHandler"
                 />
         </LinearLayout>
     </LinearLayout>
-
 </FrameLayout>
