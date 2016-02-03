@@ -1,5 +1,6 @@
 package ca.khuddam.android_winter2016;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -61,6 +62,24 @@ public class MainActivity extends AppCompatActivity {
             case RED: topLine.setTextColor(Color.RED); break;
         }
 
+        buttonOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            }
+        });
+        buttonTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            }
+        });
+        buttonThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            }
+        });
 
     }
 
@@ -68,4 +87,7 @@ public class MainActivity extends AppCompatActivity {
         WinterJacket jacket = (WinterJacket)clickedView.getTag();
         root.setBackgroundColor(jacket.getAndroidColor());
     }
+
+
+
 }
