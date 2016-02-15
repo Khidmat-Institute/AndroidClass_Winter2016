@@ -12,10 +12,10 @@
     >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:orientation="vertical"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/top_line"
             android:layout_width="wrap_content"
@@ -28,43 +28,40 @@
             android:text="This should be great !" />
     </LinearLayout>
 
-
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="bottom"
-        >
+        android:layout_gravity="bottom">
 
         <Button
-            android:id="@+id/button1"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:text="Button 1"
-            android:onClick="buttonHandler"
-            />
+            android:id="@+id/btnOne"
+            android:onClick="btnClick" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:text="Button 2"
-                android:onClick="buttonHandler"
-                />
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
                 android:layout_weight="1"
+                android:id="@+id/btnTwo"
+                android:onClick="btnClick" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:text="Button 3"
-                android:onClick="buttonHandler"
-                />
+                android:layout_weight="1"
+                android:id="@+id/btnThree"
+                android:onClick="btnClick" />
+
         </LinearLayout>
     </LinearLayout>
 

@@ -10,7 +10,7 @@ public class WinterJacket {
     /**
      *  Black = 1, White = 2, Red = 3
      */
-    private JacketColor color = JacketColor.RED;
+    private JacketColor color = JacketColor.BLACK;
     public int coatLength;
     public int armLength;
     public int materialType;
@@ -19,10 +19,10 @@ public class WinterJacket {
     public boolean hasCap;
 
     public enum JacketColor {
-        GREEN,
         BLACK,
         BLUE,
-        RED
+        RED,
+        GREEN
     }
 
     public void setColor(JacketColor theColor) {
@@ -32,18 +32,12 @@ public class WinterJacket {
     public JacketColor getColor() {
         return color;
     }
-
-    public int getAndroidColor() {
-        switch (color) {
-            case GREEN:
-                return Color.GREEN;
-            case BLUE:
-                return Color.BLUE;
-            case RED:
-                return Color.RED;
-            default:
-                return Color.BLACK;
+    public int getAndroidColor(){
+        switch(color){
+            case BLUE:return Color.BLUE;
+            case GREEN:return Color.GREEN;
+            case RED:return Color.RED;
+            default:return Color.BLACK;
         }
     }
-
 }

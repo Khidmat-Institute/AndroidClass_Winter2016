@@ -5,67 +5,55 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-
 
 public class MainActivity extends AppCompatActivity {
 
     TextView topLine;
-
-    Button buttonOne;
-    Button buttonTwo;
-    Button buttonThree;
-
-    View root;
+    Button btnOne, btnTwo, btnThree;
+    FrameLayout rootLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        root = findViewById(R.id.rootView);
-
         // Wire a connection to the top TextView
         topLine = (TextView)findViewById(R.id.top_line);
+        btnOne=(Button)findViewById(R.id.btnOne);
+        btnTwo=(Button)findViewById(R.id.btnTwo);
+        btnThree=(Button)findViewById(R.id.btnThree);
+        rootLayout=(FrameLayout)findViewById(R.id.rootView);
+
 
         topLine.setText(topLine.getText() + " - Some dynamic stuff I control");
 
-        buttonOne = (Button)findViewById(R.id.button1);
-        buttonTwo = (Button)findViewById(R.id.button2);
-        buttonThree = (Button)findViewById(R.id.button3);
-
         // Creating an actual instance of a Jacket from the blueprint
         // that we defined in WinterJacket.java
-        WinterJacket smallJacket = new WinterJacket();
-        smallJacket.setColor(WinterJacket.JacketColor.BLUE);
+        WinterJacket redJacket = new WinterJacket();
+        WinterJacket greenJacket =new WinterJacket();
+        WinterJacket blueJacket = new WinterJacket();
 
-        // second jacket
-        WinterJacket jacketTwo = new WinterJacket();
-        jacketTwo.setColor(WinterJacket.JacketColor.GREEN);
+        redJacket.setColor(WinterJacket.JacketColor.RED);
+        greenJacket.setColor(WinterJacket.JacketColor.GREEN);
+        blueJacket.setColor(WinterJacket.JacketColor.BLUE);
 
-        // third jacket
-        WinterJacket jacketThree = new WinterJacket();
-        jacketThree.setColor(WinterJacket.JacketColor.RED);
-
-        // associate jackets with the buttons
-        buttonOne.setTag(smallJacket);
-        buttonTwo.setTag(jacketTwo);
-        buttonThree.setTag(jacketThree);
-
-        switch(smallJacket.getColor()) {
+        btnOne.setTag(redJacket);
+        btnTwo.setTag(greenJacket);
+        btnThree.setTag(blueJacket);
+        /*switch(smallJacket.getColor()) {
             // Set the topline text color based on jackcolor
             // using html type hex color values
             case BLACK: topLine.setTextColor(Color.BLACK); break;
             case BLUE: topLine.setTextColor(Color.BLUE); break;
             case RED: topLine.setTextColor(Color.RED); break;
-        }
-
-
+        }*/
     }
 
-    public void buttonHandler(View clickedView) {
-        WinterJacket jacket = (WinterJacket)clickedView.getTag();
-        root.setBackgroundColor(jacket.getAndroidColor());
+    public void btnClick(View clickedButton){
+        WinterJacket associtedJacket=(WinterJacket)clickedButton.getTag();
+        rootLayout.setBackgroundColor(associtedJacket.getAndroidColor());
+
     }
 }
