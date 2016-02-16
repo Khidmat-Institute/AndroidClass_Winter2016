@@ -1,8 +1,10 @@
 package ca.khuddam.android_winter2016;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -48,10 +50,21 @@ public class MainActivity extends AppCompatActivity {
         WinterJacket jacketThree = new WinterJacket();
         jacketThree.setColor(WinterJacket.JacketColor.RED);
 
+        buttonThree.setBackgroundColor(Color.BLUE);
         // associate jackets with the buttons
         buttonOne.setTag(smallJacket);
         buttonTwo.setTag(jacketTwo);
         buttonThree.setTag(jacketThree);
+/*        buttonThree.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (v.getId() == R.id.button1) return;
+                buttonHandler(v);
+            }
+        });*/
+//        buttonThree.setOnClickListener();
+        buttonThree.setOnTouchListener(btnTouch);
 
         switch(smallJacket.getColor()) {
             // Set the topline text color based on jackcolor
@@ -66,6 +79,34 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonHandler(View clickedView) {
         WinterJacket jacket = (WinterJacket)clickedView.getTag();
-        root.setBackgroundColor(jacket.getAndroidColor());
+//        root.setBackgroundColor(jacket.getAndroidColor());
+        buttonThree.setBackgroundColor(Color.RED);
     }
+
+    private View.OnTouchListener btnTouch = new View.OnTouchListener() {
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            int action = event.getAction();
+
+            if (v.getId() == R.id.button1) return false;
+
+            else if (v.getId() == R.id.button2) {
+                if (action == MotionEvent.ACTION_DOWN) {
+                    Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                    startActivity(intent);
+//                    new SecondActivity();
+                }
+            }
+            else if (v.getId() == R.id.button3) {
+                if (action == MotionEvent.ACTION_DOWN) {
+                    buttonThree.setBackgroundColor(Color.RED);
+                } else if (action == MotionEvent.ACTION_UP) {
+                    buttonThree.setBackgroundColor(Color.BLUE);
+                }
+            }
+            return false;
+        }
+
+    };
+
 }

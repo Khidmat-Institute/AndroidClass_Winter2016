@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+
+            <!-- view background color -->
+            <solid
+                android:color="#ff0000" >
+            </solid>
+
+            <gradient
+                android:angle="360"
+                android:centerColor = "#ff0000"
+                android:endColor = "#0000ff"
+                android:gradientRadius = "360"
+                android:startColor="#00ff00"
+                android:type="sweep" />
+            <!-- view border color and width -->
+            <stroke
+                android:width="3dp"
+                android:color="#1c1b20" >
+            </stroke>
+
+            <!-- If you want to add some padding -->
+            <padding
+                android:left="4dp"
+                android:top="4dp"
+                android:right="4dp"
+                android:bottom="4dp"    >
+            </padding>
+
+            <!-- Here is the corner radius -->
+            <corners
+                android:radius="10dp"   >
+            </corners>
+
+        </shape>
+    </item>
+
+    <item android:state_pressed = "false">
+        <shape>
+            <solid
+                android:color="#ff0000" >
+            </solid>
+
+            <stroke
+                android:width="3dp"
+                android:color="#1c1b20" >
+            </stroke>
+
+                <gradient
+                    android:angle="180"
+                    android:centerColor = "#00ff00"
+                    android:endColor = "#C100ff"
+                    android:gradientRadius = "180"
+                    android:startColor="#ff0000"
+                    android:type="sweep" />
+
+            <!-- If you want to add some padding -->
+            <padding
+                android:left="4dp"
+                android:top="4dp"
+                android:right="4dp"
+                android:bottom="4dp">
+            </padding>
+
+            <!-- Here is the corner radius -->
+            <corners
+                android:radius="10dp">
+            </corners>
+        </shape>
+
+    </item>
+</selector>

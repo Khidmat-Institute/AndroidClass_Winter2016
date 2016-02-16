@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Button 1"
-            android:onClick="buttonHandler"
+            android:background="@drawable/my_button"
             />
 
         <LinearLayout
@@ -54,8 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:text="Button 2"
-                android:onClick="buttonHandler"
+                android:background="@drawable/download_link"
                 />
             <Button
                 android:id="@+id/button3"
@@ -63,7 +62,7 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Button 3"
-                android:onClick="buttonHandler"
+                android:background="@drawable/selected_state"
                 />
         </LinearLayout>
     </LinearLayout>
