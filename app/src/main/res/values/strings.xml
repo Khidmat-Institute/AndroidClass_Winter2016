@@ -1,7 +1,4 @@
 <resources>
     <string name="app_name">android_winter2016</string>
     <string name="title_activity_second">SecondActivity</string>
-    <string name="title_activity_fragment_handler">FragmentHandlerActivity</string>
-    <string name="title_activity_splash_screen">SplashScreenActivity</string>
-    <string name="title_activity_temporary">TemporaryActivity</string>
 </resources>
