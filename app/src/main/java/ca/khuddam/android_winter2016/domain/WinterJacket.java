@@ -1,4 +1,4 @@
-package ca.khuddam.android_winter2016;
+package ca.khuddam.android_winter2016.domain;
 
 import android.graphics.Color;
 
