@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">android_winter2016</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="str_fragment1">Fragment 1</string>
+    <string name="str_fragment2">Fragment 2</string>
+    <string name="str_fragment3">Fragment 3</string>
 </resources>
