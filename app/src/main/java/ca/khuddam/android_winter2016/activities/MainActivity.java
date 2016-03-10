@@ -1,4 +1,4 @@
-package ca.khuddam.android_winter2016;
+package ca.khuddam.android_winter2016.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,6 +8,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import ca.khuddam.android_winter2016.R;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -23,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_fragment_handler);
 
-
+/*
         root = findViewById(R.id.rootView);
 
         // Wire a connection to the top TextView
@@ -55,16 +57,18 @@ public class MainActivity extends AppCompatActivity {
         buttonOne.setTag(smallJacket);
         buttonTwo.setTag(jacketTwo);
         buttonThree.setTag(jacketThree);
-/*        buttonThree.setOnClickListener(new View.OnClickListener() {
+
+        buttonThree.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 if (v.getId() == R.id.button1) return;
                 buttonHandler(v);
             }
-        });*/
+        });
+
 //        buttonThree.setOnClickListener();
-        buttonThree.setOnTouchListener(btnTouch);
+//        buttonThree.setOnTouchListener(btnTouch);
 
         switch(smallJacket.getColor()) {
             // Set the topline text color based on jackcolor
@@ -73,12 +77,21 @@ public class MainActivity extends AppCompatActivity {
             case BLUE: topLine.setTextColor(Color.BLUE); break;
             case RED: topLine.setTextColor(Color.RED); break;
         }
-
+*/
 
     }
 
+    public void fragmentsHandler(View view) {
+
+        Intent intent = new Intent(getApplicationContext(), FragmentHandlerActivity.class);
+        startActivity(intent);
+    }
+
+
+
+
     public void buttonHandler(View clickedView) {
-        WinterJacket jacket = (WinterJacket)clickedView.getTag();
+//        WinterJacket jacket = (WinterJacket)clickedView.getTag();
 //        root.setBackgroundColor(jacket.getAndroidColor());
         buttonThree.setBackgroundColor(Color.RED);
     }

@@ -30,7 +30,7 @@ public class FragmentHandler extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.content_fragment_handler, container, false);
-        commonFragment = new FirstFragment();
+        commonFragment = new JacketSelectorFragment();       // default Fragment is first fragment
         commonFragmentTransaction = getFragmentManager().beginTransaction()
                 .add(R.id.fragmentContainer, commonFragment);
         commonFragmentTransaction.commit();
@@ -47,7 +47,7 @@ public class FragmentHandler extends Fragment {
         jacketButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                jacketLayout.setBackgroundColor(Color.GREEN);
+                jacketLayout.setBackgroundColor(Color.GREEN);   //  default button is first jacket button from left
                 colorLayout.setBackgroundColor(Color.CYAN);
                 sizeLayout.setBackgroundColor(Color.CYAN);
 
@@ -55,7 +55,7 @@ public class FragmentHandler extends Fragment {
 //                colorButton.setTypeface(null, Typeface.NORMAL);
 //                sizeButton.setTypeface(null, Typeface.NORMAL);
 
-                commonFragment = new FirstFragment();
+                commonFragment = new JacketSelectorFragment();
                 commonFragmentTransaction = getFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, commonFragment);
                 commonFragmentTransaction.commit();
