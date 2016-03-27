@@ -10,7 +10,8 @@ public class WinterJacket {
     /**
      *  Black = 1, White = 2, Red = 3
      */
-    private JacketColor color = JacketColor.RED;
+    private JacketColor color;
+    private JacketSize size;
     public int coatLength;
     public int armLength;
     public int materialType;
@@ -23,6 +24,13 @@ public class WinterJacket {
         BLACK,
         BLUE,
         RED
+    }
+
+    public enum JacketSize {
+        SMALL,
+        MEDIUM,
+        LARGE
+
     }
 
     public void setColor(JacketColor theColor) {
@@ -46,4 +54,12 @@ public class WinterJacket {
         }
     }
 
+
+    public JacketSize getSize() {
+        return size;
+    }
+
+    public void setSize(JacketSize size) {
+        this.size = size;
+    }
 }

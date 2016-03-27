@@ -22,6 +22,6 @@ public class JacketSelectorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         getActivity().setTitle("Winter Jackets");
-        return inflater.inflate(R.layout.jacketselector_fragment, container , false);
+        return inflater.inflate(R.layout.jackets_fragment, container , false);
     }
 }

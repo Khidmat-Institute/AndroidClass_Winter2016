@@ -19,5 +19,5 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/flower" />
+        android:src="@drawable/flower"/>
 </RelativeLayout>

@@ -30,7 +30,7 @@ public class FragmentHandler extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.content_fragment_handler, container, false);
-        commonFragment = new JacketSelectorFragment();       // default Fragment is first fragment
+        commonFragment = new JacketsFragment();       // default Fragment is first fragment
         commonFragmentTransaction = getFragmentManager().beginTransaction()
                 .add(R.id.fragmentContainer, commonFragment);
         commonFragmentTransaction.commit();
@@ -55,7 +55,7 @@ public class FragmentHandler extends Fragment {
 //                colorButton.setTypeface(null, Typeface.NORMAL);
 //                sizeButton.setTypeface(null, Typeface.NORMAL);
 
-                commonFragment = new JacketSelectorFragment();
+                commonFragment = new JacketsFragment();
                 commonFragmentTransaction = getFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, commonFragment);
                 commonFragmentTransaction.commit();
@@ -73,7 +73,7 @@ public class FragmentHandler extends Fragment {
 //                colorButton.setTypeface(null, Typeface.BOLD);
 //                sizeButton.setTypeface(null, Typeface.NORMAL);
 
-                commonFragment = new SecondFragment();
+                commonFragment = new JacketColorFragment();
                 commonFragmentTransaction = getFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, commonFragment);
                 commonFragmentTransaction.commit();
@@ -91,7 +91,7 @@ public class FragmentHandler extends Fragment {
 //                colorButton.setTypeface(null, Typeface.NORMAL);
 //                sizeButton.setTypeface(null, Typeface.BOLD);
 
-                commonFragment = new ThirdFragment();
+                commonFragment = new JacketSizeFragment();
                 commonFragmentTransaction = getFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, commonFragment);
                 commonFragmentTransaction.commit();
