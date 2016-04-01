@@ -11,6 +11,10 @@ public class SplashActivity extends AppCompatActivity {
     // Mainn thread is monitoring a message queue
 
     static final int SPLASH_DELAY = 5*1000;
+
+    // Will link the the meain looper attatched the main thread
+    // Handler can help qeuue up code execution and to delay code
+    // execution
     Handler mHandler = new Handler();
 
     @Override
