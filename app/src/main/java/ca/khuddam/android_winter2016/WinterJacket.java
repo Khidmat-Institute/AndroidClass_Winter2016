@@ -17,6 +17,7 @@ public class WinterJacket {
     public String description;
     public float msrp;
     public boolean hasCap;
+    public String website;
 
     public enum JacketColor {
         GREEN,

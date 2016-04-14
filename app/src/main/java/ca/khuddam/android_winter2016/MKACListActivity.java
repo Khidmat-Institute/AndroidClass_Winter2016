@@ -7,6 +7,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MKACListActivity extends AppCompatActivity {
 
@@ -29,17 +30,27 @@ public class MKACListActivity extends AppCompatActivity {
                 "Four", "Five", "Six", "Seven", "8", "9", "10"
         };
 
+        String[] myListofWebsite = new String[] {"http://www.google.com",
+                "http://www.cnn.com",
+                "http://www.khuddam.ca",
+                "http://www.toronto.com"
+        };
+
 //        String[] largerList = new String[50];
 
 
 //        listView.setAdapter(new ArrayAdapter(this, R.layout.mkac_list_item, R.id.text_item, myListofItems));
         int price = 0;
+        Random rn = new Random();
         ArrayList<WinterJacket> jacketArrayList = new ArrayList();
+        int websiteListLength = myListofWebsite.length;
         for(String s : myListofItems) {
             WinterJacket wj = new WinterJacket();
             wj.description = s;
             wj.msrp += 10;
             wj.armLength = (int)((1.5f)*wj.msrp);
+            int webIndex = rn.nextInt(websiteListLength);
+            wj.website = myListofWebsite[webIndex];
             jacketArrayList.add(wj);
         }
 
